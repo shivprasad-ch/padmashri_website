@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h2 class="text-success">✅ Contact Form Submitted!</h2>
+    <p class="lead">We’ve received your message and will contact you shortly.</p>
+    <a href="{% url 'home' %}" class="btn btn-primary mt-3">🔙 Back to Home</a>
+</div>
+{% endblock %}

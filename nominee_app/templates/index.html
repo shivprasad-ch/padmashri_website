@@ -1,0 +1,25 @@
+<!-- templates/nominee_app/index.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-4">
+  <h2 class="mb-4">🌟 Padma Shri Nominees</h2>
+  {% if nominees %}
+    <div class="row">
+      {% for nominee in nominees %}
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <img src="{{ nominee.profile_photo.url }}" class="card-img-top" alt="{{ nominee.full_name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ nominee.full_name }}</h5>
+              <p class="card-text">{{ nominee.tagline }}</p>
+              <a href="{% url 'nominee_detail' nominee.id %}" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No nominees available.</p>
+  {% endif %}
+</div>
+{% endblock %}

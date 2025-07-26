@@ -1,0 +1,8 @@
+{% if nominee.qr_code %}
+<div class="mt-4">
+    <h5>QR Code</h5>
+    <img src="{{ nominee.qr_code.url }}" alt="QR Code for {{ nominee.full_name }}" class="img-fluid" width="200">
+    <p><small>Scan this to open profile directly</small></p>
+    <a href="{{ nominee.qr_code.url }}" download class="btn btn-sm btn-outline-primary">Download QR Code</a>
+</div>
+{% endif %}

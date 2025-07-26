@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>📘 Full Contribution Timeline for {{ nominee.name }}</h2>
+    <ul class="list-group">
+        {% for contribution in contributions %}
+            <li class="list-group-item">
+                <strong>{{ contribution.year }}:</strong> {{ contribution.description }}
+            </li>
+        {% empty %}
+            <li class="list-group-item">No contributions available.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

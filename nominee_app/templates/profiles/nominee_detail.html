@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Hero Section (Name, Image, Quick Details) -->
+{% include "includes/hero.html" %}
+
+<!-- Biography -->
+{% include "includes/bio.html" %}
+
+<!-- Contribution Timeline -->
+{% include "includes/timeline.html" %}
+
+<!-- Media Gallery (Images/Videos) -->
+{% include "includes/gallery.html" %}
+
+<!-- Supporting Documents (PDFs, Reports, etc.) -->
+{% include "includes/documents.html" %}
+
+<!-- Testimonials from Public, Peers -->
+{% include "includes/testimonials.html" %}
+
+<!-- Contact Info / Footer -->
+{% include "includes/contact.html" %}
+
+{% endblock %}

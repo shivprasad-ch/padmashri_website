@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2>{{ document.title }}</h2>
+    <p>{{ document.description }}</p>
+
+    {% if document.file %}
+        <a href="{{ document.file.url }}" class="btn btn-outline-danger mt-2">📎 Download Document</a>
+    {% endif %}
+
+    <a href="{% url 'home' %}" class="btn btn-secondary mt-3">⬅ Back to Home</a>
+</div>
+{% endblock %}
