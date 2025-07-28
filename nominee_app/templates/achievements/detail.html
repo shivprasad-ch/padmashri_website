@@ -1,13 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container mt-5">
-    <h2>{{ achievement.title }}</h2>
-    <p>{{ achievement.description }}</p>
-
-    {% if achievement.file %}
-        <a href="{{ achievement.file.url }}" class="btn btn-outline-success mt-2">📄 Download File</a>
-    {% endif %}
-
-    <a href="{% url 'home' %}" class="btn btn-secondary mt-3">⬅ Back to Home</a>
+<div class="container py-5">
+  <h2>{{ achievement.title }} ({{ achievement.year }})</h2>
+  <p>{{ achievement.description }}</p>
+  <a href="/" class="btn btn-outline-primary mt-3">⬅️ Back to Home</a>
 </div>
 {% endblock %}

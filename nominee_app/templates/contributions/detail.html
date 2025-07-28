@@ -1,13 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container mt-5">
-    <h2>{{ contribution.title }}</h2>
-    <p>{{ contribution.description }}</p>
-
-    {% if contribution.file %}
-        <a href="{{ contribution.file.url }}" class="btn btn-outline-primary mt-2">📄 Download Document</a>
-    {% endif %}
-
-    <a href="{% url 'home' %}" class="btn btn-secondary mt-3">⬅ Back to Home</a>
+<div class="container py-5">
+  <h2>{{ contribution.year }} - {{ contribution.title }}</h2>
+  <p>{{ contribution.description }}</p>
+  <a href="/" class="btn btn-outline-primary mt-3">⬅️ Back to Home</a>
 </div>
 {% endblock %}

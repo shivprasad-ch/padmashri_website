@@ -119,7 +119,7 @@ def media_by_year(request, year):
     })
 
 # ✉️ Contact Form View
-def contact_form_view(request):  # ✅ renamed to match URL config
+def contact_form_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
