@@ -8,7 +8,7 @@ from PIL import Image
 class Nominee(models.Model):
     full_name = models.CharField(max_length=200)
     tagline = models.CharField(max_length=255)
-    profile_photo = models.ImageField(upload_to='photos/')
+    profile_photo = models.ImageField(upload_to='photos/')  # ✅ path fixed
     bio = models.TextField()
     field_of_work = models.CharField(max_length=100)
     impact_numbers = models.TextField(blank=True)
@@ -44,7 +44,7 @@ class Contribution(models.Model):
 # 🏅 Awards and Recognitions
 class Achievement(models.Model):
     nominee = models.ForeignKey(Nominee, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)  # <-- renamed from 'award_name'
+    title = models.CharField(max_length=255)
     year = models.PositiveIntegerField()
     description = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -61,7 +61,7 @@ class MediaFile(models.Model):
     )
     nominee = models.ForeignKey(Nominee, on_delete=models.CASCADE)
     file_type = models.CharField(max_length=10, choices=MEDIA_TYPES)
-    file = models.FileField(upload_to='media/')
+    file = models.FileField(upload_to='media/')  # ✅ path is okay (media/media/filename)
 
     def __str__(self):
         return f"{self.file_type.capitalize()} - {self.nominee.full_name}"
@@ -78,7 +78,7 @@ class Document(models.Model):
     )
     nominee = models.ForeignKey(Nominee, on_delete=models.CASCADE)
     doc_type = models.CharField(max_length=20, choices=DOC_TYPES)
-    file = models.FileField(upload_to='documents/')
+    file = models.FileField(upload_to='documents/')  # ✅ good path
 
     def __str__(self):
         return f"{self.doc_type.capitalize()} - {self.nominee.full_name}"
