@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, FileResponse
 from .models import (
@@ -127,4 +128,4 @@ def contact_form_view(request):
             return render(request, 'nominee_app/contact_success.html')  # success message
     else:
         form = ContactForm()
-    return render(request, 'nominee_app/contact_form.html', {'form': form})
+    return render(request, 'nominee_app/contact_form.html', {'form': form}) 

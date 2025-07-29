@@ -1,8 +1,9 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% block content %}
-<div class="container py-5">
-  <h2>{{ contribution.year }} - {{ contribution.title }}</h2>
-  <p>{{ contribution.description }}</p>
-  <a href="/" class="btn btn-outline-primary mt-3">⬅️ Back to Home</a>
+<div class="container py-4">
+    <h2 class="mb-3">{{ contribution.title }}</h2>
+    <p><strong>Year:</strong> {{ contribution.year }}</p>
+    <p>{{ contribution.description|linebreaks }}</p>
+    <a href="{% url 'home' %}" class="btn btn-outline-secondary mt-3">← Back to Home</a>
 </div>
 {% endblock %}
